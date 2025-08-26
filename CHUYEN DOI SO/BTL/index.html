@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerConnect AI - Kết nối sinh viên và doanh nghiệp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Định nghĩa nền gradient cho header */
+        .gradient-bg {
+            background: linear-gradient(90deg, #2563eb, #1e40af);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo + tên website -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                        <span class="text-2xl">🤖</span>
+                    </div>
+                    <h1 class="text-2xl font-bold">CareerConnect AI</h1>
+                </div>
+
+                <!-- Menu -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-blue-200 transition-colors">Trang chủ</a>
+                    <a href="taohoso.html" class="hover:text-blue-200 transition-colors">Hồ sơ</a>
+                    <a href="lienhe.html" class="hover:text-blue-200 transition-colors">Liên hệ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+</body>
+<!-- Hero Section -->
+<section class="gradient-bg text-white py-20">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-5xl font-bold mb-6">Kết nối thông minh với AI</h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+            Nền tảng AI tiên tiến giúp sinh viên tìm việc phù hợp và doanh nghiệp tìm nhân tài chất lượng
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="showStudentForm()" 
+                class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Tôi là sinh viên 🎓
+            </button>
+
+            <button onclick="showCompanyForm()" 
+                class="bg-purple-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-900 transition-colors">
+                Tôi là nhà tuyển dụng 🏢
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- CSS Gradient -->
+<style>
+    .gradient-bg {
+        background: linear-gradient(90deg, #9333ea, #4338ca); /* tím → xanh dương */
+    }
+</style>
+
+<!-- JS -->
+<script>
+    function showStudentForm() {
+        alert("Form dành cho sinh viên sẽ hiển thị ở đây!");
+    }
+
+    function showCompanyForm() {
+        alert("Form dành cho nhà tuyển dụng sẽ hiển thị ở đây!");
+    }
+</script>
+
+
+<!-- Main Content -->
+<div class="container mx-auto px-6 py-12">
+
+    <!-- Student Profile Form -->
+    <div id="studentForm" class="hidden animate-fadeIn">
+        <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-10 transform transition-all hover:scale-[1.01]">
+            <h3 class="text-3xl font-extrabold text-purple-700 mb-10 text-center flex items-center justify-center gap-3">
+                🎓 Tạo hồ sơ sinh viên
+            </h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Họ và tên</label>
+                    <input type="text" id="studentName" 
+                        class="w-full p-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                        placeholder="Nguyễn Văn A">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Chuyên ngành</label>
+                    <select id="studentMajor" 
+                        class="w-full p-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent transition">
+                        <option>Công nghệ thông tin</option>
+                        <option>Kinh tế</option>
+                        <option>Marketing</option>
+                        <option>Kế toán</option>
+                        <option>Thiết kế</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Kỹ năng</label>
+                    <input type="text" id="studentSkills" 
+                        class="w-full p-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                        placeholder="JavaScript, Python, React...">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Kinh nghiệm (năm)</label>
+                    <select id="studentExperience" 
+                        class="w-full p-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent transition">
+                        <option>0 - Sinh viên mới</option>
+                        <option>1 - Có thực tập</option>
+                        <option>2 - Có kinh nghiệm part-time</option>
+                        <option>3+ - Có kinh nghiệm làm việc</option>
+                    </select>
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Mô tả bản thân</label>
+                    <textarea id="studentDescription" rows="4" 
+                        class="w-full p-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                        placeholder="Mô tả về bản thân, mục tiêu nghề nghiệp..."></textarea>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <button onclick="findJobs()" 
+                    class="px-10 py-4 rounded-xl font-bold text-lg text-white bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 hover:opacity-90 shadow-lg transition-all glow-button">
+                    🤖 Tìm việc phù hợp với AI
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Job Form -->
+    <div id="companyForm" class="hidden animate-fadeIn">
+        <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-10 transform transition-all hover:scale-[1.01]">
+            <h3 class="text-3xl font-extrabold text-purple-700 mb-10 text-center flex items-center justify-center gap-3">
+                🏢 Đăng tin tuyển dụng
+            </h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Tên công ty</label>
+                    <input type="text" id="companyName" 
+                        class="w-full p-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                        placeholder="Công ty ABC">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Vị trí tuyển dụng</label>
+                    <input type="text" id="jobTitle" 
+                        class="w-full p-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                        placeholder="Frontend Developer">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Lĩnh vực</label>
+                    <select id="jobField" 
+                        class="w-full p-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                        <option>Công nghệ thông tin</option>
+                        <option>Tài chính - Ngân hàng</option>
+                        <option>Marketing - PR</option>
+                        <option>Thiết kế - Sáng tạo</option>
+                        <option>Bán hàng</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Mức lương</label>
+                    <select id="jobSalary" 
+                        class="w-full p-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                        <option>5-10 triệu</option>
+                        <option>10-15 triệu</option>
+                        <option>15-20 triệu</option>
+                        <option>20-30 triệu</option>
+                        <option>Trên 30 triệu</option>
+                    </select>
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Yêu cầu kỹ năng</label>
+                    <input type="text" id="jobRequirements" 
+                        class="w-full p-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                        placeholder="React, Node.js, 2+ năm kinh nghiệm...">
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Mô tả công việc</label>
+                    <textarea id="jobDescription" rows="4" 
+                        class="w-full p-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                        placeholder="Mô tả chi tiết về công việc, quyền lợi..."></textarea>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <button onclick="findCandidates()" 
+                    class="px-10 py-4 rounded-xl font-bold text-lg text-white bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 hover:opacity-90 shadow-lg transition-all glow-button">
+                    🤖 Tìm ứng viên phù hợp với AI
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Extra CSS -->
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+        animation: fadeIn 0.6s ease-in-out;
+    }
+    .glow-button {
+        box-shadow: 0 0 20px rgba(147, 51, 234, 0.6);
+    }
+    .glow-button:hover {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
+    }
+</style>
+<!-- AI Matching Results -->
+<div id="matchingResults" class="hidden animate-fadeIn">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center space-x-3 bg-white rounded-full px-6 py-3 shadow-lg">
+                <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center match-animation">
+                    <span class="text-white text-sm">🤖</span>
+                </div>
+                <span class="text-gray-700 font-medium">AI đang phân tích và tìm kiếm...</span>
+            </div>
+        </div>
+        
+        <div id="resultsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Kết quả sẽ được thêm bằng JS -->
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div id="featuresSection" class="mt-20">
+    <h3 class="text-4xl font-extrabold text-center text-gray-900 mb-16 tracking-tight">
+        🌟 Tính năng nổi bật
+    </h3>
+    <div class="grid md:grid-cols-3 gap-10">
+        <!-- Feature 1 -->
+        <div class="bg-white rounded-2xl p-10 shadow-xl card-hover transform transition-all hover:-translate-y-2 hover:shadow-2xl animate-fadeUp">
+            <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                <span class="text-4xl text-white">🎯</span>
+            </div>
+            <h4 class="text-xl font-bold mb-4 text-gray-800">Matching thông minh</h4>
+            <p class="text-gray-600 leading-relaxed">
+                AI phân tích kỹ năng, kinh nghiệm và sở thích để tìm công việc phù hợp nhất.
+            </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white rounded-2xl p-10 shadow-xl card-hover transform transition-all hover:-translate-y-2 hover:shadow-2xl animate-fadeUp delay-150">
+            <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                <span class="text-4xl text-white">⚡</span>
+            </div>
+            <h4 class="text-xl font-bold mb-4 text-gray-800">Tốc độ cao</h4>
+            <p class="text-gray-600 leading-relaxed">
+                Kết quả matching chỉ trong vài giây, tiết kiệm thời gian cho cả sinh viên và doanh nghiệp.
+            </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white rounded-2xl p-10 shadow-xl card-hover transform transition-all hover:-translate-y-2 hover:shadow-2xl animate-fadeUp delay-300">
+            <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                <span class="text-4xl text-white">📊</span>
+            </div>
+            <h4 class="text-xl font-bold mb-4 text-gray-800">Phân tích chi tiết</h4>
+            <p class="text-gray-600 leading-relaxed">
+                Báo cáo chi tiết độ phù hợp với điểm số và lý do cụ thể cho mỗi kết quả.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Extra CSS -->
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn { animation: fadeIn 0.6s ease-in-out; }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeUp { animation: fadeUp 0.8s ease-out forwards; opacity: 0; }
+    .delay-150 { animation-delay: 0.15s; }
+    .delay-300 { animation-delay: 0.3s; }
+
+    /* Loading pulse cho AI icon */
+    .match-animation {
+        animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.2); opacity: 0.7; }
+    }
+
+    /* Card hover nhẹ */
+    .card-hover {
+        transition: all 0.3s ease-in-out;
+    }
+    .card-hover:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+</style>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
+                            <span class="text-lg">🤖</span>
+                        </div>
+                        <h5 class="text-xl font-bold">CareerConnect AI</h5>
+                    </div>
+                    <p class="text-gray-400">Kết nối giữa sinh viên và doanh nghiệp</p>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Dành cho sinh viên</h6>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Tìm việc làm</a></li>
+                        <li><a href="#" class="hover:text-white">Tạo hồ sơ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Dành cho doanh nghiệp</h6>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Đăng tin tuyển dụng</a></li>
+                        <li><a href="#" class="hover:text-white">Tìm ứng viên</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Liên hệ</h6>
+<ul class="space-y-2 text-gray-400">
+                        <li>📧 info@careerconnect.ai</li>
+                        <li>📞 0328-842-8888</li>
+                        <li>📍 Hà Đông, Hà Nội, Việt Nam</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 CareerConnect AI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showStudentForm() {
+            document.getElementById('studentForm').classList.remove('hidden');
+            document.getElementById('companyForm').classList.add('hidden');
+            document.getElementById('matchingResults').classList.add('hidden');
+            document.getElementById('featuresSection').classList.add('hidden');
+        }
+
+        function showCompanyForm() {
+            document.getElementById('companyForm').classList.remove('hidden');
+            document.getElementById('studentForm').classList.add('hidden');
+            document.getElementById('matchingResults').classList.add('hidden');
+            document.getElementById('featuresSection').classList.add('hidden');
+        }
+
+        function findJobs() {
+            const name = document.getElementById('studentName').value;
+            const major = document.getElementById('studentMajor').value;
+            const skills = document.getElementById('studentSkills').value;
+            
+            if (!name || !skills) {
+                alert('Vui lòng điền đầy đủ thông tin!');
+                return;
+            }
+
+            document.getElementById('matchingResults').classList.remove('hidden');
+            document.getElementById('studentForm').classList.add('hidden');
+            
+            // Simulate AI processing
+            setTimeout(() => {
+                const jobs = [
+                    {
+                        title: 'Frontend Developer',
+                        company: 'TechViet Solutions',
+                        salary: '15-20 triệu',
+                        match: '95%',
+                        location: 'Hà Nội',
+                        skills: 'React, JavaScript, CSS',
+                        type: 'job'
+                    },
+                    {
+                        title: 'Full Stack Developer',
+                        company: 'Digital Innovation',
+                        salary: '18-25 triệu',
+                        match: '88%',
+                        location: 'TP.HCM',
+                        skills: 'Node.js, React, MongoDB',
+                        type: 'job'
+                    },
+                    {
+                        title: 'UI/UX Designer',
+                        company: 'Creative Studio',
+                        salary: '12-18 triệu',
+                        match: '82%',
+                        location: 'Đà Nẵng',
+                        skills: 'Figma, Adobe XD, Photoshop',
+type: 'job'
+                    }
+                ];
+                
+                displayResults(jobs, 'job');
+            }, 2000);
+        }
+
+        function findCandidates() {
+            const company = document.getElementById('companyName').value;
+            const jobTitle = document.getElementById('jobTitle').value;
+            const requirements = document.getElementById('jobRequirements').value;
+            
+            if (!company || !jobTitle || !requirements) {
+                alert('Vui lòng điền đầy đủ thông tin!');
+                return;
+            }
+
+            document.getElementById('matchingResults').classList.remove('hidden');
+            document.getElementById('companyForm').classList.add('hidden');
+            
+            // Simulate AI processing
+            setTimeout(() => {
+                const candidates = [
+                    {
+                        name: 'Bùi Phương Nam',
+                        major: 'Công nghệ thông tin',
+                        experience: '2 năm',
+                        match: '92%',
+                        skills: 'React, Node.js, JavaScript',
+                        university: 'ĐH Bách Khoa Hà Nội',
+                        type: 'candidate'
+                    },
+                    {
+                        name: 'Tạ Công Thắng',
+                        major: 'Khoa học máy tính',
+                        experience: '1 năm',
+                        match: '87%',
+                        skills: 'Python, React, SQL',
+                        university: 'ĐH Quốc Gia TP.HCM',
+                        type: 'candidate'
+                    },
+                    {
+                        name: 'Nguyễn Trung Hiếu',
+                        major: 'Công nghệ thông tin',
+                        experience: '3 năm',
+                        match: '85%',
+                        skills: 'Vue.js, PHP, MySQL',
+                        university: 'ĐH Đại Nam',
+                        type: 'candidate'
+                    }
+                ];
+                
+                displayResults(candidates, 'candidate');
+            }, 2000);
+        }
+
+        function displayResults(results, type) {
+            const container = document.getElementById('resultsContainer');
+            container.innerHTML = '';
+            
+            results.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-xl p-6 shadow-lg card-hover';
+                
+                if (type === 'job') {
+                    card.innerHTML = `
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-semibold text-gray-800">${item.title}</h4>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">${item.match}</span>
+                        </div>
+                        <div class="space-y-2 mb-4">
+<p class="text-gray-600"><span class="font-medium">Công ty:</span> ${item.company}</p>
+                            <p class="text-gray-600"><span class="font-medium">Lương:</span> ${item.salary}</p>
+                            <p class="text-gray-600"><span class="font-medium">Địa điểm:</span> ${item.location}</p>
+                            <p class="text-gray-600"><span class="font-medium">Kỹ năng:</span> ${item.skills}</p>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
+                                Ứng tuyển
+                            </button>
+                            <button class="flex-1 border border-purple-600 text-purple-600 py-2 px-4 rounded-lg hover:bg-purple-50 transition-colors">
+                                Xem chi tiết
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    card.innerHTML = `
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-semibold text-gray-800">${item.name}</h4>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">${item.match}</span>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <p class="text-gray-600"><span class="font-medium">Chuyên ngành:</span> ${item.major}</p>
+                            <p class="text-gray-600"><span class="font-medium">Kinh nghiệm:</span> ${item.experience}</p>
+                            <p class="text-gray-600"><span class="font-medium">Trường:</span> ${item.university}</p>
+                            <p class="text-gray-600"><span class="font-medium">Kỹ năng:</span> ${item.skills}</p>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
+                                Liên hệ
+                            </button>
+                            <button class="flex-1 border border-purple-600 text-purple-600 py-2 px-4 rounded-lg hover:bg-purple-50 transition-colors">
+                                Xem hồ sơ
+                            </button>
+                        </div>
+                    `;
+                }
+                
+                container.appendChild(card);
+            });
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96ddf142b4ede6a6',t:'MTc1NDk4MDQxOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
